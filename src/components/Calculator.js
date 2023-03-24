@@ -1,9 +1,6 @@
 import React from 'react';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Calculator extends React.Component {
-  render() {
-    return (
+const Calculator = () => (
       <div className="calc-container">
         <div className="output-bar" />
 
@@ -79,6 +76,5 @@ class Calculator extends React.Component {
         </div>
       </div>
     );
-  }
-}
+
 export default Calculator;
