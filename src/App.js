@@ -1,12 +1,12 @@
 import './style.css';
 import Calculator from './components/Calculator';
-import FetchAPIData from './components/Fetch_API_Data';
+import Quotes from './components/Quotes';
 
 function App() {
   return (
     <div className="wrapper">
       <Calculator />
-      <FetchAPIData />
+      <Quotes />
     </div>
   );
 }

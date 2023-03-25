@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const FetchAPIData = () => {
-  const [data, setData] = useState([]);
+const Quotes = () => {
+  const [quotes, setQuotes] = useState([]);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -9,22 +9,24 @@ const FetchAPIData = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch('https://api.api-ninjas.com/v1/quotes',
+        const res = await fetch('https://api.api-ninjas.com/v1/quotes?category=happiness',
           {
             headers: {
               'X-Api-Key': 'HIJnuO75APP270hIqiA33g==jZKKK75Rr1Ru1yfZ',
             },
           });
         const response = await res.json();
-        setData(response);
+        setQuotes(response);
       } catch (error) {
         setHasError(true);
       }
       setIsLoading(false);
     };
     fetchData();
-  }, [setData]);
+  }, [setQuotes]);
 
+  // eslint-disable-next-line
+  console.log(quotes);
   return (
     <div className="quotes">
       <h1>Quotes API</h1>
@@ -33,7 +35,7 @@ const FetchAPIData = () => {
         <p>Loading ...</p>
       ) : (
         <ul>
-          {data.map((quote) => (
+          {quotes.map((quote) => (
             <li key={quote.category}>
               {quote.quote}
               {' - '}
@@ -46,4 +48,4 @@ const FetchAPIData = () => {
   );
 };
 
-export default FetchAPIData;
+export default Quotes;
