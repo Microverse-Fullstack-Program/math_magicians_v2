@@ -52,7 +52,7 @@ const Calculator = () => {
             9
           </button>
           <button type="button" name="x" onClick={onClickEvent}>
-            X
+            x
           </button>
         </div>
 
