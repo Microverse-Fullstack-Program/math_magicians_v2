@@ -57,3 +57,17 @@ button {
 .button-rows button:last-child {
   background: rgb(241, 176, 55);
 }
+
+.quotes {
+  margin: 25px 40px;
+  display: flex;
+  flex-direction: column;
+  line-height: 15px;
+}
+
+.quote-list li {
+  font-size: large;
+  gap: 1445px;
+  padding: 20px 0;
+  list-style: square;
+}
