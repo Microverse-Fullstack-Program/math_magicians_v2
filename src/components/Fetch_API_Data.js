@@ -17,8 +17,6 @@ const FetchAPIData = () => {
             },
           });
         const response = await res.json();
-        // eslint-disable-next-line
-        console.log(response);
         setData(response);
       } catch (error) {
         setHasError(true);
