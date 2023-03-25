@@ -14,7 +14,7 @@ const Calculator = () => {
     setCalculation(newState);
   };
 
-  const [next, operation, total] = calcObj;
+  const { next, operation, total } = calcObj;
 
   return (
     <div className="calc-container">
