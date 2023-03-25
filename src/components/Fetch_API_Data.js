@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 const FetchAPIData = () => {
-  // slint-disable-next-line no-unused-vars
   const [data, setData] = useState([]);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -17,8 +16,6 @@ const FetchAPIData = () => {
             },
           });
         const response = await res.json();
-        // eslint-disable-next-line
-        console.log(response);
         setData(response);
       } catch (error) {
         setHasError(true);
