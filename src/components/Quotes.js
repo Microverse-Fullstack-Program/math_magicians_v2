@@ -16,7 +16,10 @@ const Quotes = () => {
             },
           });
         const response = await res.json();
-        setQuotes(response);
+        response.forEach((quote) => {
+          setQuotes((prevState) => (
+            [...prevState, quote]));
+        });
       } catch (error) {
         setHasError(true);
       }
@@ -34,9 +37,9 @@ const Quotes = () => {
       {isLoading ? (
         <p>Loading ...</p>
       ) : (
-        <ul>
+        <ul className="quote-list">
           {quotes.map((quote) => (
-            <li key={quote.category}>
+            <li key={quote.author}>
               {quote.quote}
               {' - '}
               {quote.author}
