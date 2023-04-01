@@ -28,14 +28,12 @@ const Quotes = () => {
     fetchData();
   }, [setQuotes]);
 
-  // eslint-disable-next-line
-  console.log(quotes);
   return (
     <div className="quotes">
       <h1>Quotes API</h1>
-      {hasError && <p>Something went wrong.</p>}
+      {hasError && <p className="loading">Something went wrong.</p>}
       {isLoading ? (
-        <p>Loading ...</p>
+        <p className="loading">Loading ...</p>
       ) : (
         <ul className="quote-list">
           {quotes.map((quote) => (

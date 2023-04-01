@@ -1,13 +1,23 @@
 import './style.css';
-import Calculator from './components/Calculator';
-import Quotes from './components/Quotes';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './pages/layout';
+import HomePage from './pages/home';
+import CalculatorPage from './pages/calculator';
+import QuotesPage from './pages/quotes';
+import ErrorPage from './pages/NoPage';
 
 function App() {
   return (
-    <div className="wrapper">
-      <Calculator />
-      <Quotes />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="quotes" element={<QuotesPage />} />
+          <Route path="calculator" element={<CalculatorPage />} />
+          <Route path="*" errorElement={<ErrorPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
